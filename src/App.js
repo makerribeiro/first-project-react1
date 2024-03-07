@@ -9,18 +9,18 @@ import { Container, H1, Image, ContainerItems, InputLabel, Input, Button, User }
 
 function App() {
   const [users, setUsers] = useState([]);
-  const inputName = useRef()
-  const inputAge = useRef()
+  const inputName = useRef();
+  const inputAge = useRef();
 
  async function addNewUser() {
-  const {data: newuser} = await axios.post("http://localhost:3001/users", {
+  const {data: newUser} = await axios.post("http://localhost:3001/users", {
     name: inputName.current.value, 
     age: inputAge.current.value,
   });
 
-    console.log(newuser)
+    console.log(newUser);
 
-   setUsers([...users, newuser]);
+   setUsers([...users, newUser]);
 
   }
 
